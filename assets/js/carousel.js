@@ -2,7 +2,7 @@
 (function () {
     'use strict';
 
-    const TOTAL_PHOTOS = 34;
+    const TOTAL_PHOTOS = 31;
     const PHOTO_PATH = 'assets/images/carousel/photo_';
 
     const track = document.querySelector('.carousel__track');

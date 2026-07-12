@@ -1,0 +1,6 @@
+# Source images (large, unprocessed)
+source_images/
+
+# OS files
+.DS_Store
+Thumbs.db

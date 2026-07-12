@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analice & Cristiano - Casamento</title>
+    <meta name="description" content="Casamento de Analice e Cristiano - 05 de Setembro de 2026">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Decorative leaves -->
+    <div class="leaf-decoration leaf-left"></div>
+    <div class="leaf-decoration leaf-right"></div>
+
+    <!-- Hero / Photo Carousel -->
+    <section id="carousel" class="section section--carousel">
+        <div class="carousel">
+            <div class="carousel__track">
+                <!-- Photos injected by JS -->
+            </div>
+            <button class="carousel__btn carousel__btn--prev" aria-label="Foto anterior">&#10094;</button>
+            <button class="carousel__btn carousel__btn--next" aria-label="Próxima foto">&#10095;</button>
+        </div>
+        <div class="carousel__dots"></div>
+    </section>
+
+    <!-- Location -->
+    <section id="local" class="section section--location">
+        <div class="container">
+            <div class="section__icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                    <circle cx="12" cy="9" r="2.5"/>
+                </svg>
+            </div>
+            <h2 class="section__title">Local do Casamento</h2>
+            <p class="location__venue">Restaurante Porto a Porto</p>
+            <p class="location__address">Rod. Baldicero Filomeno, 5544 - Ribeirão da Ilha,<br>Florianópolis – SC</p>
+            <a href="https://maps.google.com/?q=Restaurante+Porto+a+Porto+Ribeirao+da+Ilha+Florianopolis" target="_blank" rel="noopener" class="btn btn--outline">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                Ver no Mapa
+            </a>
+        </div>
+    </section>
+
+    <!-- Countdown -->
+    <section id="contagem" class="section section--countdown">
+        <div class="container">
+            <h2 class="section__title">Falta pouco para o nosso grande dia!</h2>
+            <div class="countdown">
+                <div class="countdown__item">
+                    <span class="countdown__number" id="countdown-days">--</span>
+                    <span class="countdown__label">Dias</span>
+                </div>
+                <div class="countdown__item">
+                    <span class="countdown__number" id="countdown-hours">--</span>
+                    <span class="countdown__label">Horas</span>
+                </div>
+                <div class="countdown__item">
+                    <span class="countdown__number" id="countdown-minutes">--</span>
+                    <span class="countdown__label">Minutos</span>
+                </div>
+                <div class="countdown__item">
+                    <span class="countdown__number" id="countdown-seconds">--</span>
+                    <span class="countdown__label">Segundos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift / PIX -->
+    <section id="presente" class="section section--gift">
+        <div class="container">
+            <div class="section__icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+            </div>
+            <h2 class="section__title">Sua presença é o nosso maior presente!</h2>
+            <p class="gift__subtitle">Mas, se desejar nos presentear, nosso Pix será uma forma de fazer parte dos nossos próximos sonhos</p>
+            <div class="gift__content">
+                <div class="gift__info">
+                    <div class="gift__detail">
+                        <span class="gift__label">Chave PIX (CPF)</span>
+                        <span class="gift__value">017.989.660-18</span>
+                    </div>
+                    <div class="gift__detail">
+                        <span class="gift__label">Banco</span>
+                        <span class="gift__value">Banco do Brasil</span>
+                    </div>
+                </div>
+                <div class="gift__qr">
+                    <div class="gift__qr-placeholder">
+                        <img src="assets/images/pix/pix_qrcode.png" alt="QR Code PIX">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weather -->
+    <section id="clima" class="section section--weather">
+        <div class="container">
+            <h2 class="section__title">Previsão do Tempo</h2>
+            <p class="weather__location">— Ribeirão da Ilha, Florianópolis - SC —</p>
+            <div class="weather__content" id="weather-content">
+                <div class="weather__loading">Carregando previsão...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section id="cronograma" class="section section--timeline">
+        <div class="container">
+            <h2 class="section__title">Cronograma</h2>
+            <div class="section__divider">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </div>
+            <div class="timeline">
+                <div class="timeline__item">
+                    <div class="timeline__icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/><circle cx="17" cy="7" r="3"/><path d="M21 21v-2a3 3 0 00-3-3h-1"/></svg>
+                    </div>
+                    <span class="timeline__time">17H30</span>
+                    <span class="timeline__label">Cerimônia</span>
+                </div>
+                <div class="timeline__item">
+                    <div class="timeline__icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v4M16 2v4M5 11h14M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/><rect x="3" y="4" width="18" height="18" rx="2"/></svg>
+                    </div>
+                    <span class="timeline__time">18H30</span>
+                    <span class="timeline__label">Coquetel<br>de Boas-Vindas</span>
+                </div>
+                <div class="timeline__item">
+                    <div class="timeline__icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><path d="M6 1v3M10 1v3M14 1v3"/></svg>
+                    </div>
+                    <span class="timeline__time">20H00</span>
+                    <span class="timeline__label">Jantar</span>
+                </div>
+                <div class="timeline__item">
+                    <div class="timeline__icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                    </div>
+                    <span class="timeline__time">21H30</span>
+                    <span class="timeline__label">Festa</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dress Code -->
+    <section id="traje" class="section section--dresscode">
+        <div class="container">
+            <h2 class="section__title">Dress Code</h2>
+            <div class="section__divider">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </div>
+            <h3 class="dresscode__title">Traje Social</h3>
+            <p class="dresscode__text">Pedimos que os convidados vistam-se de forma elegante e confortável para celebrar este dia especial conosco.</p>
+            <div class="dresscode__colors">
+                <span class="dresscode__color" style="background-color: #2d3a2e;" title="Verde escuro"></span>
+                <span class="dresscode__color" style="background-color: #5b7a5e;" title="Verde"></span>
+                <span class="dresscode__color" style="background-color: #a8b5a0;" title="Verde claro"></span>
+                <span class="dresscode__color" style="background-color: #c9bfaa;" title="Bege"></span>
+                <span class="dresscode__color" style="background-color: #b8c8d4;" title="Azul claro"></span>
+                <span class="dresscode__color" style="background-color: #e8e4df;" title="Off-white"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__names">Analice e Cristiano</p>
+            <p class="footer__date">05 de Setembro de 2026</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/carousel.js"></script>
+    <script src="assets/js/countdown.js"></script>
+    <script src="assets/js/weather.js"></script>
+</body>
+</html>

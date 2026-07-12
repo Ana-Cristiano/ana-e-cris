@@ -1,0 +1,598 @@
+/* ==========================================================================
+   Wedding Site - Analice & Cristiano
+   Color palette inspired by the invitation:
+   - Primary: #7a9e7e (sage green)
+   - Secondary: #c4d7d1 (light sage)  
+   - Accent: #5b7a5e (dark green)
+   - Background: #f5f0ea (warm cream)
+   - Text: #3d3d3d (charcoal)
+   - Light blue: #d4e5ed (watercolor blue)
+   ========================================================================== */
+
+/* ---------- Reset & Base ---------- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #7a9e7e;
+    --color-primary-light: #c4d7d1;
+    --color-primary-dark: #5b7a5e;
+    --color-bg: #f5f0ea;
+    --color-bg-alt: #eef6f3;
+    --color-text: #3d3d3d;
+    --color-text-light: #6b6b6b;
+    --color-blue-light: #d4e5ed;
+    --color-blue-wash: #e8f2f7;
+    --color-cream: #faf7f2;
+    --color-gold: #b8a88a;
+
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Montserrat', -apple-system, sans-serif;
+
+    --section-padding: 4rem 1.5rem;
+    --max-width: 800px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* ---------- Sections ---------- */
+.section {
+    padding: var(--section-padding);
+    text-align: center;
+    position: relative;
+}
+
+.section__title {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+}
+
+.section__icon {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.section__divider {
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+}
+
+/* ---------- Leaf Decorations ---------- */
+.leaf-decoration {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0.4;
+}
+
+.leaf-left {
+    left: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 800"><path d="M-10 100 Q30 150 20 200 Q10 250 30 300 Q50 350 20 400 Q-10 450 20 500 Q50 550 20 600 Q-10 650 20 700" fill="none" stroke="%237a9e7e" stroke-width="1" opacity="0.3"/><ellipse cx="15" cy="150" rx="8" ry="20" fill="%237a9e7e" opacity="0.2" transform="rotate(-30 15 150)"/><ellipse cx="25" cy="300" rx="8" ry="20" fill="%237a9e7e" opacity="0.15" transform="rotate(20 25 300)"/><ellipse cx="10" cy="500" rx="8" ry="20" fill="%237a9e7e" opacity="0.2" transform="rotate(-20 10 500)"/></svg>') repeat-y;
+    background-size: 100px auto;
+}
+
+.leaf-right {
+    right: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 800"><path d="M110 50 Q70 100 80 150 Q90 200 70 250 Q50 300 80 350 Q110 400 80 450 Q50 500 80 550 Q110 600 80 650" fill="none" stroke="%237a9e7e" stroke-width="1" opacity="0.3"/><ellipse cx="85" cy="100" rx="8" ry="20" fill="%237a9e7e" opacity="0.2" transform="rotate(30 85 100)"/><ellipse cx="75" cy="250" rx="8" ry="20" fill="%237a9e7e" opacity="0.15" transform="rotate(-20 75 250)"/><ellipse cx="90" cy="450" rx="8" ry="20" fill="%237a9e7e" opacity="0.2" transform="rotate(25 90 450)"/></svg>') repeat-y;
+    background-size: 100px auto;
+}
+
+/* ---------- Carousel ---------- */
+.section--carousel {
+    padding: 1.5rem 0 2rem;
+    background: linear-gradient(180deg, var(--color-blue-wash) 0%, var(--color-bg) 100%);
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.carousel__track {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 0.75rem;
+    padding: 0 calc(50% - 300px);
+}
+
+.carousel__track img {
+    flex: 0 0 280px;
+    width: 280px;
+    height: 370px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.carousel__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.85);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--color-text);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s;
+    z-index: 5;
+}
+
+.carousel__btn:hover {
+    background: #fff;
+}
+
+.carousel__btn--prev {
+    left: 1rem;
+}
+
+.carousel__btn--next {
+    right: 1rem;
+}
+
+.carousel__dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.carousel__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-primary-light);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.carousel__dot.active {
+    background: var(--color-primary);
+}
+
+/* ---------- Location ---------- */
+.section--location {
+    background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-blue-wash) 50%, var(--color-bg) 100%);
+}
+
+.location__venue {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-style: italic;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.location__address {
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    color: var(--color-text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+.btn--outline {
+    border: 1.5px solid var(--color-primary);
+    color: var(--color-primary-dark);
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.btn--outline:hover {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+/* ---------- Countdown ---------- */
+.section--countdown {
+    background-color: var(--color-cream);
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+}
+
+.countdown__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-right: 1px solid var(--color-primary-light);
+}
+
+.countdown__item:last-child {
+    border-right: none;
+}
+
+.countdown__number {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: var(--color-text);
+    line-height: 1;
+}
+
+.countdown__label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-text-light);
+    margin-top: 0.5rem;
+}
+
+/* ---------- Gift / PIX ---------- */
+.section--gift {
+    background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-blue-wash) 100%);
+}
+
+.gift__subtitle {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.gift__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.gift__info {
+    border: 1px solid var(--color-primary-light);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.gift__detail {
+    margin-bottom: 1rem;
+}
+
+.gift__detail:last-child {
+    margin-bottom: 0;
+}
+
+.gift__label {
+    display: block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-light);
+}
+
+.gift__value {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.gift__qr {
+    text-align: center;
+}
+
+.gift__qr-placeholder {
+    width: 150px;
+    height: 150px;
+    border: 2px dashed var(--color-primary-light);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.5rem;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.gift__qr-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.gift__qr-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-light);
+}
+
+/* ---------- Weather ---------- */
+.section--weather {
+    background-color: var(--color-cream);
+}
+
+.weather__location {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    margin-bottom: 2rem;
+}
+
+.weather__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.weather__loading {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+}
+
+.weather__main {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.weather__icon {
+    font-size: 3rem;
+}
+
+.weather__temp {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+.weather__desc {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+}
+
+.weather__minmax {
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+}
+
+.weather__details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: left;
+}
+
+.weather__detail {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.weather__note {
+    font-size: 0.7rem;
+    color: var(--color-text-light);
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+/* ---------- Timeline ---------- */
+.section--timeline {
+    background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-blue-wash) 50%, var(--color-bg) 100%);
+}
+
+.timeline {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.timeline__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    min-width: 100px;
+}
+
+.timeline__icon {
+    color: var(--color-primary);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline__time {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.timeline__label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+/* ---------- Dress Code ---------- */
+.section--dresscode {
+    background-color: var(--color-cream);
+}
+
+.dresscode__title {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+.dresscode__text {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    max-width: 400px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.8;
+}
+
+.dresscode__colors {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.dresscode__color {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-blue-wash) 100%);
+}
+
+.footer__names {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-style: italic;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.footer__date {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--color-text-light);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 3rem 1rem;
+    }
+
+    .leaf-decoration {
+        width: 60px;
+        opacity: 0.25;
+    }
+
+    .carousel__track {
+        padding: 0 calc(50% - 140px);
+    }
+
+    .carousel__track img {
+        flex: 0 0 220px;
+        width: 220px;
+        height: 290px;
+    }
+
+    .countdown__item {
+        padding: 0.75rem 1rem;
+    }
+
+    .countdown__number {
+        font-size: 2.5rem;
+    }
+
+    .gift__content {
+        flex-direction: column;
+    }
+
+    .weather__content {
+        flex-direction: column;
+    }
+
+    .timeline {
+        gap: 1.5rem;
+    }
+
+    .location__venue {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .leaf-decoration {
+        display: none;
+    }
+
+    .carousel__track {
+        padding: 0 calc(50% - 120px);
+    }
+
+    .carousel__track img {
+        flex: 0 0 200px;
+        width: 200px;
+        height: 265px;
+    }
+
+    .countdown__number {
+        font-size: 2rem;
+    }
+
+    .countdown__item {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .timeline {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+}

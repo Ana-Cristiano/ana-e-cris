@@ -428,6 +428,31 @@ body {
     flex-wrap: wrap;
 }
 
+.weather__grid {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.weather__card {
+    flex: 1 1 280px;
+    max-width: 420px;
+    background: var(--color-cream);
+    border: 1px solid var(--color-primary-light);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.weather__card-title {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.25rem;
+}
+
 .weather__loading {
     font-size: 0.85rem;
     color: var(--color-text-light);
